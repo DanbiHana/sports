@@ -20,8 +20,8 @@ td img {
 </style>
 </head>
 <body>
-<input type="button" value="결과 등록" onclick="location.href='playresult'">
-<input type="button" value="결과 수정" onclick="location.href='playresultedit'">
+<input type="button" value="결과 등록" onclick="location.href='resultRegist'">
+<input type="button" value="결과 수정" onclick="location.href='resultEdit'">
 <table align="center" border="1">
 	<tr>
 		<th>Rank<br>(순위)</th>
