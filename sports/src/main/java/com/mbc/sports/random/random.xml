@@ -3,16 +3,29 @@
 	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mbc.sports.random.RandomService">
 	<select id="randomSelectAll" resultType="com.mbc.sports.random.PlayerDTO">
-		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main from PLAYER_BASEBALL
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_BASEBALL
 	</select>
 	<select id="randomSelectBoth" resultType="com.mbc.sports.random.PlayerDTO">
-		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main from PLAYER_BASEBALL where tname = #{param1} and main = #{param2}
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_BASEBALL where tname = #{param1} and main = #{param2}
 	</select>
 	<select id="randomSelectTeam" resultType="com.mbc.sports.random.PlayerDTO">
-		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main from PLAYER_BASEBALL where tname = #{param1}
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_BASEBALL where tname = #{param1}
 	</select>
 	<select id="randomSelectPosition" resultType="com.mbc.sports.random.PlayerDTO">
-		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main from PLAYER_BASEBALL where main = #{param1}
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_BASEBALL where main = #{param1}
+	</select>
+	
+	<select id="SrandomSelectAll" resultType="com.mbc.sports.random.PlayerDTO">
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_SOCCER
+	</select>
+	<select id="SrandomSelectBoth" resultType="com.mbc.sports.random.PlayerDTO">
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_SOCCER where tname = #{param1} and main = #{param2}
+	</select>
+	<select id="SrandomSelectTeam" resultType="com.mbc.sports.random.PlayerDTO">
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_SOCCER where tname = #{param1}
+	</select>
+	<select id="SrandomSelectPosition" resultType="com.mbc.sports.random.PlayerDTO">
+		select tname, pname, pnumber, to_char(pbirth,'yyyy-MM-dd')pbirth, height, weight, main, pimage from PLAYER_SOCCER where main = #{param1}
 	</select>
 	
 	<select id="SrandomSelectAll" resultType="com.mbc.sports.random.PlayerDTO">

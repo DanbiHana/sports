@@ -210,13 +210,31 @@
 				padding: 20px;
 			}
 			
+			.random_show_team {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: auto;
+				margin: 0 auto 20px auto;
+			}
+			
+			.random_show_team img {
+				display: block;
+				min-width: 60px;
+				width: 60px;
+				height: auto;
+				background-size: contain;
+				margin: 0 20px 0 0;
+			}
+			
 			p.random_player_txt {
 				font-size: 24px;
 				line-height: 36px;
 				font-weight: bold;
 				color: #999;
 				text-align: center;
-				margin: 0 auto 20px auto;
+				margin: 0;
 			}
 			
 			.random_show_flex {
@@ -359,8 +377,9 @@
 					var height = `${randomList.height}`;
 					var weight = `${randomList.weight}`;
 					var main = `${randomList.main}`;
+					var image = `${randomList.pimage}`;
 					
-					randomInfoArray.push([tname]+","+[pname]+","+[pnumber]+","+[pbirth]+","+[height]+","+[weight]+","+[main]);
+					randomInfoArray.push([tname]+","+[pname]+","+[pnumber]+","+[pbirth]+","+[height]+","+[weight]+","+[main]+","+[image]);
 				</script>
 			</c:forEach>
 			<c:if test="${randomList != null}">
@@ -371,13 +390,16 @@
 				<script type="text/javascript">
 					$(document).ready(function() {
 						var random_num = Math.random();
-						random_num = random_num * 10;
+						random_num = random_num * randomInfoArray.length;
 						random_num = Math.floor(random_num);
 						if(random_num >= randomInfoArray.length) {
 							random_num = randomInfoArray.length - 1;
 						};
+						console.log(random_num);
+						console.log(randomInfoArray.length);
 						
 						var randomRealArray = randomInfoArray[random_num].split(',');
+						console.log(randomRealArray);
 						var team_name = null;
 						var team_img = null;
 						if(randomRealArray[0] == 'KIA' || randomRealArray[0] == 'kia') {
@@ -425,16 +447,15 @@
 							team_img = './image/baseball/logo/키움.png';
 							$('.random_player_txt').css('color', '#7c1925');
 						}
-						else if(randomRealArray[0] == 'HANWHA' || randomRealArray[0] == 'hanwha') {
+						else if(randomRealArray[0] == 'HANHWA' || randomRealArray[0] == 'hanhwa') {
 							team_name = '한화';
 							team_img = './image/baseball/logo/한화.png';
 							$('.random_player_txt').css('color', '#eb5c1d');
 						}
 
-						var player_img = './image/baseball/player/' + team_name + randomRealArray[1] + '.jpg';
-
-						$('#player_img').attr('src', player_img);
-						$('#player_team').html(randomRealArray[0]);//팀이름
+						$('#player_logo').attr('src', team_img);
+						$('#player_img').attr('src', './image/baseball/player/'+randomRealArray[7]);
+						$('#player_team').html(team_name);//팀이름
 						$('#player_name').html(randomRealArray[1]);//플레이어이름
 						$('#player_num').html(randomRealArray[2]);//등번호
 						$('#player_birth').html(randomRealArray[3]);//생일
@@ -492,7 +513,10 @@
 				<div class="random_show_whole">
 					<div class="random_show_bg"></div>
 					<div class="random_show_box">
-						<p id="player_team" class="random_player_txt">팀 이름</p>
+						<div class="random_show_team">
+							<img alt="랜덤 로고 이미지" src="" id="player_logo">
+							<p id="player_team" class="random_player_txt">팀 이름</p>
+						</div>
 						<div class="random_show_flex">
 							<div class="random_player_img">
 								<img alt="랜덤으로 나온 선수 이미지" src="" id="player_img">
