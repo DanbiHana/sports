@@ -1,6 +1,9 @@
 # 축구 야구 통합사이트 IN:OUT ⚽⚾
 <br>
 
+### ✔️ 전체 파일<br>
+[IN_OUT.pdf](https://github.com/user-attachments/files/17612967/IN_OUT.pdf)
+
 ## 🏆 프로젝트 소개 
 축구 야구 통합 사이트 IN:OUT은 축구, 야구를 즐기는 사람들의 정보 공간을 구현한 프로젝트입니다.<br>
 회원에게는 선수 및 경기 정보를 제공하고,<br>
@@ -110,6 +113,3 @@
 ![046](https://github.com/user-attachments/assets/24331af7-162d-4957-8140-bbb5dd20c833)
 ![049](https://github.com/user-attachments/assets/8e36c915-3f0d-4fba-bf7e-a52faf670252)
 <br><br><br>
-
-### ✔️ 전체 파일<br>
-[IN_OUT.pdf](https://github.com/user-attachments/files/17612967/IN_OUT.pdf)
